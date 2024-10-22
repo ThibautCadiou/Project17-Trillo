@@ -324,7 +324,8 @@ body {
   font-size: 1.3rem;
   color: var(--color-grey-dark-3);
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: space-between; }
   .recommend__count {
     margin-right: auto; }
   .recommend__photo {
@@ -386,3 +387,44 @@ body {
     font-family: sans-serif;
     line-height: 1rem;
     z-index: 1; }
+
+.cta {
+  padding: 3.5rem;
+  text-align: center; }
+  .cta__book-now {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem; }
+
+.btn {
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s; }
+  .btn__visible {
+    padding: 2.5rem 7rem; }
+  .btn__invisible {
+    position: absolute;
+    padding: 2.5rem 0rem;
+    left: 0;
+    top: -100%; }
+  .btn:hover {
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark)); }
+  .btn:hover .btn__visible {
+    transform: translateY(100%); }
+  .btn:hover .btn__invisible {
+    top: 0; }
+  .btn:focus {
+    animation: pulsate 1s infinite; }

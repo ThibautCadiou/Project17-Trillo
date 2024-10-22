@@ -381,6 +381,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   &__count {
     margin-right: auto; // pour centrer
@@ -474,5 +475,76 @@
     font-family: sans-serif;
     line-height: 1rem;
     z-index: 1;
+  }
+}
+
+/////////////////////////////////////////
+// REVIEW
+.cta {
+  padding: 3.5rem;
+  text-align: center;
+
+  &__book-now {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+  }
+}
+
+/////////////////////////////////////////
+// REVIEW
+.btn {
+  font-size: 1.5rem;
+  border: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  color: white;
+  overflow: hidden;
+  cursor: pointer;
+
+  border-radius: 100px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+
+  & > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all 0.2s;
+  }
+
+  &__visible {
+    padding: 2.5rem 7rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2.5rem 0rem;
+    left: 0;
+    top: -100%;
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    animation: pulsate 1s infinite;
   }
 }
